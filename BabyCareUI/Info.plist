@@ -29,6 +29,8 @@
 	</dict>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>We use the microphone to detect and soothe baby crying.</string>
 	<key>UILaunchScreen</key>
 	<dict>
 		<key>UIColorName</key>

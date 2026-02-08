@@ -7,6 +7,10 @@ struct ContentView: View {
                 .tabItem {
                     Label("Home", systemImage: "house")
                 }
+            CryMonitorView()
+                .tabItem {
+                    Label("Monitor", systemImage: "waveform")
+                }
             ActivityHistoryView()
                 .tabItem {
                     Label("History", systemImage: "clock")
