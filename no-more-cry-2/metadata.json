@@ -1,0 +1,7 @@
+{
+  "name": "No More Cry",
+  "description": "An AI-powered soothing assistant that listens for baby cries and automatically engages with real-time audio and visual comfort to calm them down.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

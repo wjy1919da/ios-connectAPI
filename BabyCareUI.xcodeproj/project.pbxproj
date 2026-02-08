@@ -13,6 +13,9 @@
 		AA0000010000000000000004 /* HomeLiveStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1000010000000000000004 /* HomeLiveStatusView.swift */; };
 		AA0000010000000000000005 /* ActivityHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1000010000000000000005 /* ActivityHistoryView.swift */; };
 		AA0000010000000000000006 /* AIInsightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1000010000000000000006 /* AIInsightsView.swift */; };
+		AA0000010000000000000008 /* CryMonitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1000010000000000000007 /* CryMonitorView.swift */; };
+		AA0000010000000000000009 /* GeminiLiveClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1000010000000000000008 /* GeminiLiveClient.swift */; };
+		AA0000010000000000000010 /* AudioPCMConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1000010000000000000009 /* AudioPCMConverter.swift */; };
 		AA0000010000000000000007 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA2000010000000000000001 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +27,9 @@
 		AA1000010000000000000004 /* HomeLiveStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLiveStatusView.swift; sourceTree = "<group>"; };
 		AA1000010000000000000005 /* ActivityHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityHistoryView.swift; sourceTree = "<group>"; };
 		AA1000010000000000000006 /* AIInsightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIInsightsView.swift; sourceTree = "<group>"; };
+		AA1000010000000000000007 /* CryMonitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryMonitorView.swift; sourceTree = "<group>"; };
+		AA1000010000000000000008 /* GeminiLiveClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeminiLiveClient.swift; sourceTree = "<group>"; };
+		AA1000010000000000000009 /* AudioPCMConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPCMConverter.swift; sourceTree = "<group>"; };
 		AA2000010000000000000001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA3000010000000000000001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -53,6 +59,8 @@
 				AA1000010000000000000001 /* BabyCareUIApp.swift */,
 				AA1000010000000000000002 /* ContentView.swift */,
 				AA1000010000000000000003 /* Theme.swift */,
+				AA1000010000000000000008 /* GeminiLiveClient.swift */,
+				AA1000010000000000000009 /* AudioPCMConverter.swift */,
 				AA0000010000000000000600 /* Views */,
 				AA0000010000000000000700 /* Resources */,
 				AA3000010000000000000001 /* Info.plist */,
@@ -74,6 +82,7 @@
 				AA1000010000000000000004 /* HomeLiveStatusView.swift */,
 				AA1000010000000000000005 /* ActivityHistoryView.swift */,
 				AA1000010000000000000006 /* AIInsightsView.swift */,
+				AA1000010000000000000007 /* CryMonitorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -161,6 +170,9 @@
 				AA0000010000000000000004 /* HomeLiveStatusView.swift in Sources */,
 				AA0000010000000000000005 /* ActivityHistoryView.swift in Sources */,
 				AA0000010000000000000006 /* AIInsightsView.swift in Sources */,
+				AA0000010000000000000008 /* CryMonitorView.swift in Sources */,
+				AA0000010000000000000009 /* GeminiLiveClient.swift in Sources */,
+				AA0000010000000000000010 /* AudioPCMConverter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
