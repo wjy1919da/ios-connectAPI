@@ -3,13 +3,13 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
-            HomeLiveStatusView()
+            CryMonitorView()
                 .tabItem {
                     Label("Home", systemImage: "house")
                 }
-            CryMonitorView()
+            HomeLiveStatusView()
                 .tabItem {
-                    Label("Monitor", systemImage: "waveform")
+                    Label("Status", systemImage: "waveform.path.ecg")
                 }
             ActivityHistoryView()
                 .tabItem {
