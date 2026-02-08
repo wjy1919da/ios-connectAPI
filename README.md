@@ -1,13 +1,4 @@
-# BabyCareUI - 婴儿护理应用
-
-一个现代化的 SwiftUI iOS 应用，用于追踪和管理婴儿的日常护理活动。
-
-## 功能特性
-
-- 📊 **实时状态监控** - 查看宝宝的当前状态（睡眠、喂养、情绪等）
-- 📝 **活动历史记录** - 记录和查看所有护理活动的时间线
-- 🤖 **AI 智能洞察** - 基于护理数据的模式分析和个性化建议
-
+# BabyCareUI 
 ## 项目结构
 
 ```
@@ -67,16 +58,6 @@ xcodebuild -project BabyCareUI.xcodeproj \
 - iOS 15.0+ 部署目标
 - Swift 5.9+
 
-## 主题设计
-
-应用采用柔和、温馨的配色方案：
-
-- **主色调**：蓝色系（#2B6EC2）
-- **背景色**：浅蓝色（#E8F0FA）
-- **功能色**：
-  - 喂养：绿色 (#6BBB54)
-  - 睡眠：蓝色 (#5C8CDE)
-  - 哭泣：红色 (#D95C61)
 
 ## 开发说明
 
@@ -96,6 +77,3 @@ xcodebuild -project BabyCareUI.xcodeproj \
 
 MIT License
 
-## 作者
-
-Hackathon iOS Team
