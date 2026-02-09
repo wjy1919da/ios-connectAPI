@@ -4,7 +4,9 @@ struct HomeLiveStatusView: View {
     private let activities: [TimelineActivity] = [
         TimelineActivity(assetName: "RecentFeeding", title: "Feeding", time: "5 mins ago"),
         TimelineActivity(assetName: "RecentSleeping", title: "Sleeping", time: "30 mins ago"),
-        TimelineActivity(assetName: "RecentCrying", title: "Crying", time: "45 mins ago")
+        TimelineActivity(assetName: "RecentCrying", title: "Crying", time: "45 mins ago"),
+        TimelineActivity(assetName: "RecentFeeding", title: "Feeding", time: "1 hr ago"),
+        TimelineActivity(assetName: "RecentSleeping", title: "Sleeping", time: "2 hrs ago")
     ]
 
     var body: some View {
@@ -114,7 +116,19 @@ private struct RecentActivitySection: View {
 
             VStack(spacing: 18) {
                 ForEach(Array(activities.enumerated()), id: \.offset) { index, item in
-                    TimelineRow(activity: item, isLast: index == activities.count - 1)
+                    TimelineRow(activity: item, index: index)
+                }
+            }
+            .overlayPreferenceValue(TimelineDotPreferenceKey.self) { anchors in
+                GeometryReader { proxy in
+                    let points = anchors.values.map { proxy[$0] }.sorted { $0.y < $1.y }
+                    if let first = points.first, let last = points.last {
+                        Path { path in
+                            path.move(to: CGPoint(x: first.x, y: first.y))
+                            path.addLine(to: CGPoint(x: first.x, y: last.y))
+                        }
+                        .stroke(Color.dividerGray, lineWidth: 2)
+                    }
                 }
             }
         }
@@ -123,7 +137,7 @@ private struct RecentActivitySection: View {
 
 private struct TimelineRow: View {
     let activity: TimelineActivity
-    let isLast: Bool
+    let index: Int
 
     var body: some View {
         HStack(alignment: .top, spacing: 14) {
@@ -132,10 +146,7 @@ private struct TimelineRow: View {
                     .fill(Color.dividerGray)
                     .frame(width: 10, height: 10)
                     .padding(.top, 8)
-
-                Rectangle()
-                    .fill(Color.dividerGray)
-                    .frame(width: 2, height: isLast ? 0 : 52)
+                    .anchorPreference(key: TimelineDotPreferenceKey.self, value: .center) { [index: $0] }
             }
             .frame(width: 12)
 
@@ -152,6 +163,7 @@ private struct TimelineRow: View {
                 }
             }
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 
@@ -163,6 +175,14 @@ private struct TimelineIcon: View {
             .resizable()
             .scaledToFit()
             .frame(width: 36, height: 36)
+    }
+}
+
+private struct TimelineDotPreferenceKey: PreferenceKey {
+    static var defaultValue: [Int: Anchor<CGPoint>] = [:]
+
+    static func reduce(value: inout [Int: Anchor<CGPoint>], nextValue: () -> [Int: Anchor<CGPoint>]) {
+        value.merge(nextValue(), uniquingKeysWith: { $1 })
     }
 }
 
