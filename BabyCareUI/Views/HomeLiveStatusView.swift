@@ -2,9 +2,9 @@ import SwiftUI
 
 struct HomeLiveStatusView: View {
     private let activities: [TimelineActivity] = [
-        TimelineActivity(icon: "bottle.fill", title: "Feeding", time: "5 mins ago", color: .feedingGreen),
-        TimelineActivity(icon: "moon.stars.fill", title: "Sleeping", time: "30 mins ago", color: .sleepBlue),
-        TimelineActivity(icon: "exclamationmark.bubble.fill", title: "Crying", time: "45 mins ago", color: .cryRed)
+        TimelineActivity(assetName: "RecentFeeding", title: "Feeding", time: "5 mins ago"),
+        TimelineActivity(assetName: "RecentSleeping", title: "Sleeping", time: "30 mins ago"),
+        TimelineActivity(assetName: "RecentCrying", title: "Crying", time: "45 mins ago")
     ]
 
     var body: some View {
@@ -131,16 +131,16 @@ private struct TimelineRow: View {
                 Circle()
                     .fill(Color.dividerGray)
                     .frame(width: 10, height: 10)
-                    .padding(.top, 4)
+                    .padding(.top, 8)
 
                 Rectangle()
                     .fill(Color.dividerGray)
-                    .frame(width: 2, height: isLast ? 0 : 44)
+                    .frame(width: 2, height: isLast ? 0 : 52)
             }
             .frame(width: 12)
 
             HStack(spacing: 12) {
-                IconBubble(systemName: activity.icon, color: activity.color)
+                TimelineIcon(imageName: activity.assetName)
 
                 HStack(spacing: 6) {
                     Text(activity.title)
@@ -155,18 +155,14 @@ private struct TimelineRow: View {
     }
 }
 
-private struct IconBubble: View {
-    let systemName: String
-    let color: Color
+private struct TimelineIcon: View {
+    let imageName: String
 
     var body: some View {
-        Circle()
-            .fill(color.opacity(0.18))
-            .frame(width: 38, height: 38)
-            .overlay(
-                Image(systemName: systemName)
-                    .foregroundColor(color)
-            )
+        Image(imageName)
+            .resizable()
+            .scaledToFit()
+            .frame(width: 36, height: 36)
     }
 }
 
@@ -218,10 +214,9 @@ private struct WaveShape: Shape {
 }
 
 private struct TimelineActivity {
-    let icon: String
+    let assetName: String
     let title: String
     let time: String
-    let color: Color
 }
 
 #Preview {
